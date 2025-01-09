@@ -1,0 +1,26 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.swp
+*.swo
+.Python
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+
+# VSCode
+.vscode/
+
+
+# Others
+*.sqlite3
