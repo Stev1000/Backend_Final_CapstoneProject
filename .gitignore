@@ -17,10 +17,47 @@ env/
 *.log
 local_settings.py
 db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+
+# Environment Variables
+*.env
+*.env.*
 
 # VSCode
 .vscode/
 
+# JetBrains (PyCharm)
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Testing and Coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Migrations
+migrations/
 
 # Others
-*.sqlite3
+*.bak
+*.old
+*.orig
