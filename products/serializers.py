@@ -1,8 +1,6 @@
-# products/serializers.py
-
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from products.models import Product
+from .models import Product, Category
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,6 +19,8 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 class ProductSerializer(serializers.ModelSerializer):
+    category_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), source='category')
+
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ['id', 'name', 'description', 'price', 'category_id', 'stock_quantity', 'image_url', 'created_date']
