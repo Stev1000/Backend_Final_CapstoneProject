@@ -14,32 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# myproject/urls.py
-
-# project/urls.py
-
-# ecommerce_project/urls.py
-
-# ecommerce_project/urls.py
-
-# ecommerce_project/urls.py
-
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import RedirectView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-    # Admin site
     path('admin/', admin.site.urls),
-    
-    # API endpoints for products and users
-    path('api/', include(('products.urls', 'products'), namespace='products')),
-    
-    # JWT token endpoints
+    path('api/', include(('products.urls', 'products'), namespace='products')),  # Include the products app URLs
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    
-    # Redirect root URL to admin
-    path('', RedirectView.as_view(url='/admin/', permanent=False)),
 ]

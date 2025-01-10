@@ -4,10 +4,9 @@ from .models import Product
 from .serializers import ProductSerializer, UserSerializer
 from django.contrib.auth.models import User
 
-
 class ProductViewSet(viewsets.ModelViewSet):
     # Use selective data retrieval for efficiency
-    queryset = Product.objects.only('id', 'name', 'price', 'category', 'description').all()
+    queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     

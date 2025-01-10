@@ -9,5 +9,5 @@ router.register(r'products', ProductViewSet, basename='product')
 router.register(r'users', UserViewSet, basename='user')
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', include(router.urls)),  # Ensure the router URLs are included
 ]
